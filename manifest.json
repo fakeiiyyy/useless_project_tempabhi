@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Braillie-captions",
+  "version": "1.0",
+
+  "description": "Adds Braillie captions to youtube.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Braillie-captions@mozilla.org",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["Braillie-captions.js"]
+    }
+  ]
+}
