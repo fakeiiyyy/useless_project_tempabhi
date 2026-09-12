@@ -83,6 +83,7 @@
      const segments = captionContainer.querySelectorAll('.ytp-caption-segment');
      const text = Array.from(segments).map(s => s.textContent).join(' ').trim();
      overlay.textContent = text ? toBraille(text) : '';
+     window.queueMorse(text);
     });
 
     captionObserver.observe(captionContainer, {
@@ -98,9 +99,97 @@
     }
   });
 
+  document.addEventListener('keydown', (e) => {
+  if (e.key.toLowerCase() === 'm' && e.altKey) {
+    window.toggleMorseMode();
+  }
+});
+
     hideNativeCaptions(captionContainer);
 
   }
 
+  function initBraillieCaptions() {
   waitForCaptionContainer(setupBrailleOverlay);
+}
+
+  function runFirstTimeGate() {
+  return new Promise((resolve) => {
+    const modal = document.createElement('div');
+    Object.assign(modal.style, {
+      position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+      background: 'rgba(0,0,0,0.95)', color: '#fff', zIndex: 999999,
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      justifyContent: 'center', fontSize: '24px', textAlign: 'center', gap: '20px'
+    });
+
+    const timerEl = document.createElement('div');
+    Object.assign(timerEl.style, {
+      position: 'fixed', bottom: '16px', right: '16px',
+      fontSize: '16px', color: '#aaa'
+    });
+
+    document.body.appendChild(modal);
+    document.body.appendChild(timerEl);
+
+    let interval; // single reference — always clear before starting a new one
+
+    function showStepA() {
+      clearInterval(interval);
+      modal.innerHTML = `<p>⠉⠁⠝ ⠽⠕⠥ ⠎⠑⠑⠦</p><button id="braillie-no">No</button>`;
+      const noBtn = document.getElementById('braillie-no');
+
+      let t = 7;
+      timerEl.textContent = t;
+      interval = setInterval(() => {
+        t--;
+        timerEl.textContent = t;
+        if (t <= 0) {
+          clearInterval(interval);
+          cleanup();
+          resolve();
+        }
+      }, 1000);
+
+      noBtn.onclick = () => {
+        clearInterval(interval); // stop A's timer immediately — prevents double-resolve race
+        showStepB();
+      };
+    }
+
+    function showStepB() {
+      clearInterval(interval);
+      modal.innerHTML = `<p>Pinne nee enghanada kuthiye?</p>`;
+
+      let t = 5;
+      timerEl.textContent = `Retry: ${t}`;
+      interval = setInterval(() => {
+        t--;
+        timerEl.textContent = `Retry: ${t}`;
+        if (t <= 0) {
+          clearInterval(interval);
+          showStepA(); // loop back
+        }
+      }, 1000);
+    }
+
+    function cleanup() {
+      modal.remove();
+      timerEl.remove();
+    }
+
+    showStepA();
+  });
+}
+
+(async () => {
+  const stored = await browser.storage.local.get('braillieOnboarded');
+
+  if (stored.braillieOnboarded !== true) {
+    await runFirstTimeGate();
+    await browser.storage.local.set({ braillieOnboarded: true });
+  }
+
+  initBraillieCaptions()
+})();
 })();
