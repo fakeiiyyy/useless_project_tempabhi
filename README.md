@@ -44,7 +44,7 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-[[<1.png>]]
+![alt text](1.png)
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
