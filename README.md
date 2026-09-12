@@ -44,13 +44,16 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot](<1.png>)
+![Screenshot](<3.png>)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screenshot2](<4.png>)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![Screenshot3](<1.png>)
+*Add caption explaining what this shows*
+
+![Screenshot4](<2.png>)
 *Add caption explaining what this shows*
 
 # Diagrams
