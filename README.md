@@ -35,12 +35,18 @@ For Software:
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+```bash
+git clone https://github.com/<your-username>/braillie-captions.git
+cd braillie-captions
+```
+
+No dependencies, no `npm install`, no build step — the extension runs straight from the source files. This is either minimalist engineering or we ran out of time. We'll let the judges decide.
 
 # Run
-[commands]
 
+**Firefox:**
 ### Project Documentation
 For Software:
 
