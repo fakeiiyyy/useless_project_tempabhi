@@ -57,7 +57,7 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
+![Workflow](<5.png>)
 *Add caption explaining your workflow*
 
 ### Project Demo
