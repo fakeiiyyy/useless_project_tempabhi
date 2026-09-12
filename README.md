@@ -2,23 +2,23 @@
 
 
 
-# [Project Name] 🎯
+# BRAILLE CAPTIONS YT
 
 
-## Basic Details
-### Team Name: [Name]
+## We are implementing braille captions for the yt exclusively for the blind.
+
+### Team Name: Pseudosmart
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Sidharth Menon V - Saintgits college of engineering
+- Member 2: Abhishek Reji - Saintgits college of engineering
 
 ### Project Description
 [2-3 lines about what your project does]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+youtube has neglected what the blind community really wants, Braille Captions. we decided to do it. 
 
 ### The Solution (that nobody asked for)
 [How are you solving it? Keep it fun!]
@@ -31,10 +31,6 @@ For Software:
 - [Libraries used]
 - [Tools used]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -48,7 +44,7 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot](1.png)
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
@@ -60,25 +56,6 @@ For Software:
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
