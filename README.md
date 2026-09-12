@@ -15,31 +15,38 @@
 - Member 2: Abhishek Reji - Saintgits college of engineering
 
 ### Project Description
-[2-3 lines about what your project does]
+our project is exclusively for blind people with full proof protection against the people who can see. this revolutionary project didplayes braille in dark and light modes. 
+discliamer: no blind people where harmed in making this project.
 
 ### The Problem (that doesn't exist)
 youtube has neglected what the blind community really wants, Braille Captions. we decided to do it. 
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+by making live captions in yt for blind people.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- **Languages used:** JavaScript (ES6+), JSON
+- **Frameworks used:** None — built directly on the WebExtensions API (Manifest V3), no build tooling or bundler
+- **Libraries used:** None — vanilla `MutationObserver`, DOM APIs, and a hand-written Grade-1 Braille lookup table (`BRAILLE_MAP`)
+- **Tools used:** VS Code, Firefox Developer Edition (`about:debugging` for temporary add-on loading), Google Chrome (`chrome://extensions`, Developer Mode + Load Unpacked), Git/GitHub
 
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+```bash
+git clone https://github.com/<your-username>/braillie-captions.git
+cd braillie-captions
+```
+
+No dependencies, no `npm install`, no build step — the extension runs straight from the source files. This is either minimalist engineering or we ran out of time. We'll let the judges decide.
 
 # Run
-[commands]
 
+**Firefox:**
 ### Project Documentation
 For Software:
 
