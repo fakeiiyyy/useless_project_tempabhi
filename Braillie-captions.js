@@ -39,21 +39,26 @@
   }
 
   function hideNativeCaptions(captionContainer) {
-    captionContainer.style.display = 'none';
+    captionContainer.style.opacity = '0';
+    captionContainer.style.pointerEvents = 'none';
   }
 
   function setupBrailleOverlay(captionContainer) {
-    // Our own overlay, separate from YouTube's caption box, so we don't
-    // fight with their re-renders.
-    const overlay = document.createElement('div');
-    overlay.id = 'braillie-overlay';
-    Object.assign(overlay.style, {
+  const overlay = document.createElement('div');
+  overlay.id = 'braillie-overlay';
+
+  let darkMode = true; // default: current look (dark bg, white text)
+
+  function applyTheme() {
+    overlay.style.background = darkMode ? 'rgba(0,0,0,0.75)' : 'rgba(255,255,255,0.9)';
+    overlay.style.color = darkMode ? '#fff' : '#000';
+  }
+
+  Object.assign(overlay.style, {
     position: 'absolute',
     bottom: '10%',
     left: '50%',
     transform: 'translateX(-50%)',
-    background: 'rgba(0,0,0,0.75)',
-    color: '#fff',
     fontSize: '28px',
     padding: '4px 12px',
     borderRadius: '4px',
@@ -62,19 +67,22 @@
     whiteSpace: 'pre-wrap',
     maxWidth: '80%',
     textAlign: 'center',
-    minHeight: '2.4',        // reserve space for ~2 lines regardless of content
+    minHeight: '2.4em',
     display: 'flex',
-    alignItems: 'flex-end',    // text sits at the bottom of that reserved space
+    alignItems: 'flex-end',
     justifyContent: 'center'
   });
 
-    const player = document.querySelector('#movie_player') || document.body;
-    player.appendChild(overlay);
+  applyTheme(); // set initial colors — don't rely on defaults matching your intent
+
+  const player = document.querySelector('#movie_player') || document.body;
+  player.style.position = 'relative';
+  player.appendChild(overlay);
 
     const captionObserver = new MutationObserver(() => {
-      const segments = document.querySelectorAll('.ytp-caption-segment');
-      const text = Array.from(segments).map(s => s.textContent).join(' ').trim();
-      overlay.textContent = text ? toBraille(text) : '';
+     const segments = captionContainer.querySelectorAll('.ytp-caption-segment');
+     const text = Array.from(segments).map(s => s.textContent).join(' ').trim();
+     overlay.textContent = text ? toBraille(text) : '';
     });
 
     captionObserver.observe(captionContainer, {
@@ -82,6 +90,13 @@
       subtree: true,
       characterData: true
     });
+
+    document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'b' && e.altKey) {
+      darkMode = !darkMode;
+      applyTheme();
+    }
+  });
 
     hideNativeCaptions(captionContainer);
 
