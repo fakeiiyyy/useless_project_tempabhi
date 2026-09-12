@@ -83,7 +83,6 @@
      const segments = captionContainer.querySelectorAll('.ytp-caption-segment');
      const text = Array.from(segments).map(s => s.textContent).join(' ').trim();
      overlay.textContent = text ? toBraille(text) : '';
-     window.queueMorse(text);
     });
 
     captionObserver.observe(captionContainer, {
@@ -98,12 +97,6 @@
       applyTheme();
     }
   });
-
-  document.addEventListener('keydown', (e) => {
-  if (e.key.toLowerCase() === 'm' && e.altKey) {
-    window.toggleMorseMode();
-  }
-});
 
     hideNativeCaptions(captionContainer);
 
