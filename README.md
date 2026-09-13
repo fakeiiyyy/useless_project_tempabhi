@@ -33,7 +33,7 @@ For Software:
 - **Tools used:** VS Code, Firefox Developer Edition (`about:debugging` for temporary add-on loading), Google Chrome (`chrome://extensions`, Developer Mode + Load Unpacked), Git/GitHub
 
 
-### Implementation
+### Implementation 
 For Software:
 
 # Installation
@@ -42,7 +42,7 @@ git clone https://github.com/<your-username>/braillie-captions.git
 cd braillie-captions
 ```
 
-No dependencies, no `npm install`, no build step — the extension runs straight from the source files. This is either minimalist engineering or we ran out of time. We'll let the judges decide.
+No dependencies, no `npm install`, no build step — the extension runs straight from the source files. Minimalist engineering.
 
 # Run
 
@@ -52,7 +52,7 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot](<3.png>)
-*first timr opening*
+*first time the exetension is opened*
 
 ![Screenshot2](<4.png>)
 *after pressing no*
@@ -65,7 +65,7 @@ For Software:
 
 # Diagrams
 ![Workflow](<5.png>)
-*Add caption explaining your workflow*
+*Event-driven execution flow showing how the extension observes YouTube's DOM for closed captions, extracts live text, translates characters into Braille dot patterns, and updates the screen overlay.*
 
 ### Project Demo
 # Video
