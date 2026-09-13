@@ -69,7 +69,7 @@ For Software:
 
 ### Project Demo
 # Video
-<video src="demo_video.mp4" controls width="100%"></video>
+[Watch Demo Video](demo_video.mp4)
 *in the first screen we are asking "can you see" in braille script, there is an option "no", if the person clicks the butten we will ask "pinne ne enganada kuthiye?", the screen will be redirected to the previous screen after 5 seconds. if there is no action until 7 seconds in the first screen then we detect as he is a blind and we will redirect to the youtube and the person can scroll and find the video they need. we provide the captions in the screen if the subtitles is on. for the comfortability of the user we are provided both the dark mode and light mode.*
 
 
