@@ -52,16 +52,16 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot](<3.png>)
-*Add caption explaining what this shows*
+*first timr opening*
 
 ![Screenshot2](<4.png>)
-*Add caption explaining what this shows*
+*after pressing no*
 
 ![Screenshot3](<1.png>)
-*Add caption explaining what this shows*
+*barille subtitles in the dark mode*
 
 ![Screenshot4](<2.png>)
-*Add caption explaining what this shows*
+*subtitles in the light mode*
 
 # Diagrams
 ![Workflow](<5.png>)
@@ -70,15 +70,13 @@ For Software:
 ### Project Demo
 # Video
 ![demo](<demo_video.mp4>)
-*Explain what the video demonstrates*
+*in the first screen we are asking "can you see" in braille script, there is an option "no", if the person clicks the butten we will ask "pinne ne enganada kuthiye?", the screen will be redirected to the previous screen after 5 seconds. if there is no action until 7 seconds in the first screen then we detect as he is a blind and we will redirect to the youtube and the person can scroll and find the video they need. we provide the captions in the screen if the subtitles is on. for the comfortability of the user we are provided both the dark mode and light mode.*
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Sidharth Menon V: code and design.
+- Abhishek Reji: Documentation.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
