@@ -69,7 +69,7 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+[demo_video.mp4]
 *Explain what the video demonstrates*
 
 # Additional Demos
